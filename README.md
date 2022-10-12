@@ -34,7 +34,7 @@ print(peluang)
 
 ### b. Mean Distribusi Geometrik dengan 10000 data random , prob = 0,20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )
 
-> Cara untuk menemukan mean dalam distribusi geometrik dengan `n = 10000` dan `data random`, sertia memiliki `prob = 0.20` dan `distribusi geometri acak x = 3` maka kita dapat gunakan syntax `rgeom(n, p) == 3`
+> Cara untuk menemukan mean dalam distribusi geometrik dengan `n = 10000` dan `data random`, serta memiliki `prob = 0.20` dan `distribusi geometri acak x = 3` maka kita dapat gunakan syntax `rgeom(n, p) == 3`
 
 ``` Volt
 #b
@@ -375,12 +375,12 @@ Contoh :
 ``` Volt
 #b
 breaks <- 50
-hist(var, breaks, main = "5025211147_Rr. Diajeng Alfisyahrinnisa Anandha_Probstat_{A}_DNhistogram")
+hist(var, breaks, main = "5025211147_Rr. Diajeng Alfisyahrinnisa Anandha_Probstat_A_DNhistogram")
 
 ```
 > Histogram dari distribusi normal dengan breaks 50 ialah
 
-<img width="960" alt="image" src="https://user-images.githubusercontent.com/91377782/195331226-f7039343-1b98-4bea-bb6b-b2565ca9e754.png">
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/91377782/195342401-1e487754-e218-4d7d-99ba-4010f4d2d03e.png">
 
 ### c. Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal.
 > Untuk menemukan variansi dari hasil generate random nilai pada distribusi normal, kita dapat tentukan dengan `(sd(data bangkitan acak))^2`
