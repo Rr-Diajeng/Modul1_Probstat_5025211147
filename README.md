@@ -14,6 +14,8 @@ Praktikum Probstat 1
 
 ### a. Berapa peluang penyurvei bertemu x = 3 orang yang tidak menghadiri acara vaksinasi  sebelum keberhasilan pertama ketika p = 0,20 dari populasi menghadiri acara vaksinasi ? (distribusi Geometrik)
 
+> Cara untuk menemukan peluang bertemu 3 orang yang tidak menghadiri acara vaksinasi sebelum keberhasilan pertama ialah menggunakan `dgeom(x, 1 - p)` dengan `p = 0.20` dan `x = 3`
+
 ``` Volt
 #a
 x <- 3
@@ -31,6 +33,8 @@ print(peluang)
 
 
 ### b. Mean Distribusi Geometrik dengan 10000 data random , prob = 0,20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )
+
+> Cara untuk menemukan mean dalam distribusi geometrik dengan `n = 10000` dan `data random`, sertia memiliki `prob = 0.20` dan `distribusi geometri acak x = 3` maka kita dapat gunakan syntax `rgeom(n, p) == 3`
 
 ``` Volt
 #b
@@ -52,11 +56,12 @@ print(ratarata)
 
 ### c. Bandingkan Hasil poin a dan b , apa kesimpulan yang bisa didapatkan?
 
-> Dari point a dan b, terdapat perbedaan bahwa kalau poin `a` kita mendapatkan peluang distribusi geometrik yang tetap namun pada poin `b`, kita mendapatkan hasil yang `berubah-ubah` karena kita menggunakan data random untuk poin `b`
+> Dari point a dan b, terdapat perbedaan bahwa kalau poin `a` kita mendapatkan peluang distribusi geometrik yang `tetap` namun pada poin `b`, kita mendapatkan hasil yang `berubah-ubah` karena kita menggunakan data random untuk poin `b`
 
 
 ### d. Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama
->Membuat histogram `hist()` dengan `rgeom()` untuk parameter `n` dan `p`
+
+> Membuat histogram `hist()` dengan `rgeom()` untuk parameter `n` dan `p`
 
 ``` Volt
 #d
@@ -68,6 +73,8 @@ hist(rgeom(n, p), main = "hist")
 <img width="649" alt="image" src="https://user-images.githubusercontent.com/91377782/195323009-05415b81-450a-47f9-8b79-068a01306bf3.png">
 
 ### e. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Geometrik.
+
+> Rumus `rataan` untuk distribusi geometrik adalah `1 / p` dan rumus `variansi` untuk distribusi geometrik adalah `(1-p) / (p *p)`
 
 ``` Volt
 #e
@@ -88,6 +95,7 @@ paste("Nilai varian:", varian)
 ### Terdapat 20 pasien menderita Covid19 dengan peluang sembuh sebesar 0.2. Tentukan :
 
 ### a. Peluang terdapat 4 pasien yang sembuh.
+> untuk menemukan peluang dari 4 pasien yang sembuh, kita dapat gunakan `dbinom()` dengan parameter `x = 4`, `n = 20`, dan `p = 0.20`
 
 ``` Volt
 n <- 20
@@ -107,6 +115,8 @@ print(binom)
 
 ### b. Gambarkan grafik histogram berdasarkan kasus tersebut.
 
+> untuk membuat histogram dari distribusi binomial dengan angka random, maka kita dapat gunakan `hist()` dari `rbinom()`
+
 ``` Volt
 #b
 hist(rbinom(x, n, p))
@@ -118,6 +128,8 @@ hist(rbinom(x, n, p))
 > Grafik tersebut didapat dari parameter `x`, `n`, dan `p`
 
 ### c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Binomial.
+
+> rumus `rataan` untuk distribusi binomial adalah `n * p` dan rumus `variansi` untuk distribusi binomial adalah `n * p * q`
 
 ``` Volt
 #c
@@ -137,6 +149,8 @@ print(variansi)
 
 ### a. Berapa peluang bahwa 6 bayi akan lahir di rumah sakit ini besok?
 
+> Untuk menemukan peluang dari 6 bayi yang akan lahir besok, maka kita dapat gunakan distribusi poisson dengan syntax `dpois()` dan parameternya `x = 6` dan `lamda = 4.5`
+
 ``` Volt
 lamda <- 4.5
 
@@ -152,6 +166,8 @@ print(pel)
 > Peluang 6 bayi akan lahir di rumah sakit besok adalah `0.12812` dengan menggunakan distribusi poisson
 
 ### b. simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini  selama setahun (n = 365)
+
+> untuk menemukan histogram dari data poisson, kita dapat gunakan `hist()` dengan `rpois()`
 
 ``` Volt
 #b
@@ -169,6 +185,8 @@ hist(rpois(n, lamda))
 > Kesimpulannya ialah untuk poin `a`, kita tidak mengambil kemungkinan 6 bayi lahir dalam satu tahun sedangkan untuk poin `b`, kita mengambil kemungkinan 6 bayi akan lahir dalam 1 tahun 
 
 ### d. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson.
+
+> rumus `rataan` dari distribusi poisson ialah `λ` dan rumus `variansi` pada distribusi poisson ialah `λ` juga
 
 ``` Volt
 #d
@@ -189,6 +207,8 @@ print(variansi)
 
 ### a. Fungsi Probabilitas dari Distribusi Chi-Square.
 
+> untuk menemukan fungsi probabilitas dari distribusi chi-square, kita dapat gunakan `dchisq()` dengan parameter `x = 2` dan `v = 10`
+
 ``` Volt
 x <- 2
 v <- 10
@@ -205,6 +225,8 @@ print(peluang)
 
 ### b. Histogram dari Distribusi Chi-Square dengan 100 data random.
 
+> untuk menemukan histogram dari chi-square, kita dapat gunakan `hist()` dengan `rchisq()` dan parameter `n` dan `v`
+
 ``` Volt
 #b
 n <- 100
@@ -217,6 +239,7 @@ hist(rchisq(n, v))
 <img width="944" alt="image" src="https://user-images.githubusercontent.com/91377782/195326877-879c3d23-c719-4d6c-9b65-b33bcbbfecd5.png">
 
 ### c. Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.
+> Rumus `rataan` dari distribusi chi-square adalah `v` dan rumus `variansi` dari distribusi chi-square adalah `2 * v` 
 
 ``` Volt
 #c
@@ -238,6 +261,7 @@ print(variansi)
 ### Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3). Tentukan
 
 ### a. Fungsi Probabilitas dari Distribusi Exponensial 
+> untuk menemukan fungsi probabilitas dari distribusi exponensial dengan data random ialah menggunakan `rexp()`
 
 ``` Volt
 lamda <- 3
@@ -253,6 +277,7 @@ print(prob)
 > Hasil fungsi probabilitas untuk  `λ = 3` pada distribusi exponensial adalah `0.05293`
 
 ### b. Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan random
+> untuk menentukan histogram, dapat menggunakan `hist()` dengan `rexp(n, rate = lamda)` dan parameter `n` yang diganti-ganti `(10, 100, 1000, 10000)`
 
 ``` Volt
 #b
@@ -275,6 +300,8 @@ hist(rexp(10000, rate = lamda))
 Petunjuk: 
 Gunakan set.seed(1)
 Gunakan fungsi bawaan R
+
+> Dengan fungsi bawaan R, kita dapat menemukan `mean` dengan `mean()` dari `rexp()` dan dapat menemukan variansi dengan `sd()^2` dari `rexp()`
 
 ``` Volt
 #c
@@ -303,6 +330,11 @@ Contoh data :
 rata-rata = 5.083333
 X1 = 5
 X2 = 6
+
+> Disini, untuk menemukan `x1` kita dapat menggunakan fungsi `floor()` untuk membulatkan `rataan` ke `angka terkecil` dan untuk menemukan `x2` dapat menggunakan fungsi `ceiling()` untuk membulatkan `rataan` ke `angka terbesar`. Lalu, untuk menemukan `rataan`, kita harus cari tau dulu 
+data bangkitan acak di distribusi normal dengan `rnorm()` dan parameternya `n = 100` dan `mean = 50`. Setelah kita mengetahui data bangkitan acak, `rataan` dapat dicari dengan `mean()` dari `data bangkitan acak`
+
+> Untuk menemukan `z-score`, kita dapat gunakan rumus `(data bangkitan acak - rataan) / sd(var)`
 
 
 ``` Volt
@@ -338,6 +370,8 @@ NRP_Nama_Probstat_{Nama Kelas}_DNhistogram
 Contoh :
 312312312_Rola_Probstat_A_DNhistogram
 
+> Untuk membuat histogram dari distribusi normal dengan breaks 50, kita gunakan `hist()` dengan parameter `data bangkitan acak`, `breaks` 
+
 ``` Volt
 #b
 breaks <- 50
@@ -349,6 +383,7 @@ hist(var, breaks, main = "5025211147_Rr. Diajeng Alfisyahrinnisa Anandha_Probsta
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/91377782/195331226-f7039343-1b98-4bea-bb6b-b2565ca9e754.png">
 
 ### c. Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal.
+> Untuk menemukan variansi dari hasil generate random nilai pada distribusi normal, kita dapat tentukan dengan `(sd(data bangkitan acak))^2`
 
 ``` Volt
 #c
