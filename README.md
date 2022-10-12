@@ -23,3 +23,23 @@ print(peluang)
 
 > Hasil dari peluang penyurvei bertemu 3 orang yang tidak menghadiri acara vaksinasi sebelum keberhasilan pertama dengan menggunakan distribusi geometrik adalah 0,0064
 
+### Mean Distribusi Geometrik dengan 10000 data random , prob = 0,20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )
+
+```
+n <- 10000
+ratarata <- mean(rgeom(n, p) == 3)
+print(ratarata)
+
+```
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/91377782/195319016-03d066d8-7f79-44fe-8c09-463fe745488d.png">
+
+> Mean dari distribusi geometrik dengan 10000 data random akan menghasilkan rata-rata yang selalu berubah karena kita menggunakan data random. Misal, untuk percobaan pertama, mean yang kita dapatkan adalah
+> <img width="305" alt="image" src="https://user-images.githubusercontent.com/91377782/195319720-0120107d-39cf-4a1e-adc7-c084cf889b32.png">
+
+> Lalu saat kita nge run lagi, hasil dari mean akan berubah yaitu menjadi 
+> <img width="325" alt="image" src="https://user-images.githubusercontent.com/91377782/195319646-9f39caa8-c1aa-4dd8-8066-ef1b836ff06f.png">
+
+
+
+
